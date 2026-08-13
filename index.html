@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>memory-matching-game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+
+<!-- password=>sk12345PX.6789 -->
+
+<body>
+
+<!-- <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎴</text></svg>"> -->
+
+    <div class="container">
+        <div class="cont  cont1">
+            <h1>Memory Matching Game</h1>
+
+            <div class="emoji">🏅🎖️🏅🎖️</div>
+            <button id="startbtn">let's Start</button>
+
+        </div>
+        <div class="cont cont2">
+            <p id="MovesDisplay">Moves: 0</p>
+
+            <div id="status"> match The Cards</div>
+            <div id="board"></div>
+        </div>
+        <div id="winScreen">
+            <div class="win-box">
+                <h1>🎉🎈🎈🎉 You Won! 🎉🎈🎈🎉</h1>
+                <p id="winStats">All pairs matched!</p>
+                <button id="playAgainBtn">Play Again</button>
+            </div>
+        </div>
+        <div id="looseScreen">
+            <div class="loose-box">
+                <h1>😭😭 You loose!😭😭</h1>
+                <p id="winStats">some pairs are left!</p>
+                <button id="playAgain">please Try Again</button>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
