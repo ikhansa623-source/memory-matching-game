@@ -12,7 +12,7 @@ document.querySelector("#startbtn").addEventListener("click", () => {
 
 
 
-let symbols = ["🐎", "🦋", "😃", "🫂", "🦷", "🤺",  "🪲", "😎", 
+let symbols = ["🐎", "🦋", "😃", "🦷", "🪲", "😎","🐰","🙉","🐻","🐧", 
 
 
 ]
@@ -108,7 +108,7 @@ board.addEventListener("click", (e) => {
 
         checkMatch()
 
-        if (moves >= 18 && matchedCount < symbols.length) {
+        if (moves >= 22 && matchedCount < symbols.length) {
             document.getElementById("looseScreen").style.display = "block"
 
         }

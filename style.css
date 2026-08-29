@@ -1,46 +1,61 @@
 * {
     box-sizing: border-box;
     /* padding/border width mein add nahi hoga, overflow kam hoga */
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     overflow-x: hidden;
     /* agar kuch phir bhi overflow kare, scrollbar na aaye */
 }
+
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: antiquewhite;
-    margin: 23px;
-    padding: 23px;
-    /* width: 60vw; */
+    margin: 23px; 
+     padding: 23px;
+         width: calc(100% - 46px);   /* margin double account ho jaye */
     min-height: 500px;
+
+        background-image: 
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url("https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .cont1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     margin: 12px;
-    height: 600px;
+    padding: 23px;
+    min-height: 400px;
     background-color: rgba(130, 86, 86, 0.264);
     border-radius: 10px;
 
+
+    background-color: rgba(130, 86, 86, 0.35);
+    backdrop-filter: blur(3px);
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
 }
 
 .cont1 h1 {
-font-family:monospace;
-color:rgb(0, 81, 255);
-    font-size: 50px;
+    font-family: fantasy;
+    color: white;
+    font-size: 60px;
     width: 400px;
     padding-bottom: 20px;
     text-align: center;
-    /* font-weight: bold; */
+    font-weight: 300;
 }
 
 .cont2 {
@@ -51,21 +66,39 @@ color:rgb(0, 81, 255);
     display: none;
     padding: 12px;
     margin: 12px;
-    /* max-height: 80vh; */
+    max-width: 480px;
+    min-height: auto;
     background-color: rgba(153, 152, 152, 0.264);
     border-radius: 10px;
+
+        background-color: rgba(30, 30, 30, 0.45);
+    backdrop-filter: blur(3px);
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.cont2 h1 {
+    font-family: fangson;
+    color: white;
+    font-size: 60px;
+    width: 400px;
+    padding-bottom: 20px;
+    text-align: center;
+    /* font-weight: bold; */
 }
 
 #MovesDisplay {
     text-align: center;
     font-size: 23px;
+    color: white;
+    font-family: fangson;
     font-weight: bold;
 }
 
 #board {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: repeat(auto-fill,100px);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(auto-fill, 100px);
     align-items: center;
     justify-content: center;
     gap: 18px;
@@ -119,7 +152,7 @@ color:rgb(0, 81, 255);
 
 .card.matched {
     background-color: #d4edda;
-    /* halka green background */
+    /* halka white background */
     box-shadow: 0 0 10px rgba(0, 200, 0, 0.5);
 }
 
@@ -142,16 +175,33 @@ color:rgb(0, 81, 255);
 }
 
 @keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    20% { transform: translateX(-8px); }
-    40% { transform: translateX(8px); }
-    60% { transform: translateX(-8px); }
-    80% { transform: translateX(8px); }
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-8px);
+    }
+
+    40% {
+        transform: translateX(8px);
+    }
+
+    60% {
+        transform: translateX(-8px);
+    }
+
+    80% {
+        transform: translateX(8px);
+    }
 }
 
 .card.wrong {
     animation: shake 0.4s ease;
-    background-color: #f8d7da;   /* halka red, mismatch indicate karne ke liye */
+    background-color: #f8d7da;
+    /* halka red, mismatch indicate karne ke liye */
 }
 
 
@@ -159,12 +209,15 @@ color:rgb(0, 81, 255);
 
 #status {
     font-size: 50px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: bold;
     text-align: center;
     padding: 12px;
     margin: 6px;
+    font-family: fantasy;
+    color: white;
+    /* width: 400px; */
+
 }
+
 
 #winScreen {
     position: fixed;
@@ -222,7 +275,7 @@ color:rgb(0, 81, 255);
 }
 
 .emoji {
-    font-size: 52px;
+    font-size: 40px;
 }
 
 button {
@@ -288,20 +341,21 @@ button {
     .container {
         margin: 20px;
         padding: 20px;
+        min-height: auto;
         height: auto;
 
     }
-   
+
     .cont1 h1 {
         font-size: 45px;
         width: 90%;
         max-width: 300px;
     }
-  
+
     .card {
-        height: 70px;
-        width: 70px;
-        font-size: 45px;
+        height: 100px;
+        width: 100px;
+        font-size: 80px;
     }
 
     #board {
@@ -312,10 +366,22 @@ button {
 }
 
 @media screen and (max-width: 480px) {
+    .cont2{
+        min-height: auto;
+        padding: 10px;
+        max-width: 100%;
+    }
+    #status {
+        font-size: 30px;
+        text-align: center;
+         padding: 6px;
+    margin: 4px;
+    }
+
     .card {
-        height: 55px;
-        width: 55px;
-        font-size: 32px;
+        height: 70px;
+        width: 70px;
+        font-size: 55px;
     }
 
     #board {
