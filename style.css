@@ -7,7 +7,21 @@
 
 body {
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100%;
     /* agar kuch phir bhi overflow kare, scrollbar na aaye */
+}
+
+/* html, body {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+} */
+
+body {
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
@@ -16,18 +30,19 @@ body {
     align-items: center;
     justify-content: center;
     background-color: antiquewhite;
-    margin: 23px; 
-     padding: 23px;
-         width: calc(100% - 46px);   /* margin double account ho jaye */
-    min-height: 500px;
+    margin: 0;
+    padding: 23px;
+    width: calc(100% - 46px);
+    /* margin double account ho jaye */
+    min-height: 100%;
 
-        background-image: 
-        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
         url("https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1600&q=80");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: scroll;
 }
 
 .cont1 {
@@ -45,7 +60,7 @@ body {
     background-color: rgba(130, 86, 86, 0.35);
     backdrop-filter: blur(3px);
     border-radius: 10px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 .cont1 h1 {
@@ -71,10 +86,10 @@ body {
     background-color: rgba(153, 152, 152, 0.264);
     border-radius: 10px;
 
-        background-color: rgba(30, 30, 30, 0.45);
+    background-color: rgba(30, 30, 30, 0.45);
     backdrop-filter: blur(3px);
     border-radius: 10px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 .cont2 h1 {
@@ -339,17 +354,19 @@ button {
 
 @media screen and (max-width:900px) {
     .container {
-        margin: 20px;
-        padding: 20px;
-        min-height: auto;
-        height: auto;
-
+      margin: 0;
+        min-height: 100vh;
+        min-height: 100dvh;   /* dynamic viewport height — mobile browser bar ka sahi hisab */
+        padding: 16px;
     }
 
     .cont1 h1 {
         font-size: 45px;
         width: 90%;
         max-width: 300px;
+    }
+    .cont2{
+        padding: 23px;
     }
 
     .card {
@@ -366,16 +383,17 @@ button {
 }
 
 @media screen and (max-width: 480px) {
-    .cont2{
+    .cont2 {
         min-height: auto;
         padding: 10px;
         max-width: 100%;
     }
+
     #status {
         font-size: 30px;
         text-align: center;
-         padding: 6px;
-    margin: 4px;
+        padding: 6px;
+        margin: 4px;
     }
 
     .card {
