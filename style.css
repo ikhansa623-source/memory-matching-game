@@ -32,7 +32,7 @@ body {
     background-color: antiquewhite;
     margin: 0;
     padding: 23px;
-    width: calc(100% - 46px);
+    /* width: calc(100% - 46px); */
     /* margin double account ho jaye */
     min-height: 100%;
 
@@ -355,14 +355,16 @@ button {
 @media screen and (max-width:900px) {
     .container {
       margin: 0;
+          /* width: calc(100% - 46px); */
+
         min-height: 100vh;
-        min-height: 100dvh;   /* dynamic viewport height — mobile browser bar ka sahi hisab */
+         min-height: 100dvh;   /*dynamic viewport height — mobile browser bar ka sahi hisab */
         padding: 16px;
     }
 
     .cont1 h1 {
         font-size: 45px;
-        width: 90%;
+        width: 100%;
         max-width: 300px;
     }
     .cont2{
