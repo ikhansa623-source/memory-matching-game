@@ -39,7 +39,6 @@ body {
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
         url("https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1600&q=80");
-    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -52,7 +51,7 @@ body {
     justify-content: center;
     margin: 12px;
     padding: 23px;
-    min-height: 400px;
+    min-height: 90vh;
     background-color: rgba(130, 86, 86, 0.264);
     border-radius: 10px;
 
